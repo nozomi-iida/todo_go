@@ -19,4 +19,4 @@ services:
       POSTGRES_USER: deploy
       POSTGRES_PASSWORD: password
     volumes:
-      - ./tmp/db/data:/var/lib/postgresql/data:z
+      - ./db/tmp/db/data:/var/lib/postgresql/data:z

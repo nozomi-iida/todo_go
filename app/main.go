@@ -2,15 +2,16 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"net/http"
+	"github.com/nozomi-iida/todo_go/controllers"
+	"github.com/nozomi-iida/todo_go/models"
 )
 
 func main() {
 	r := gin.Default()
 
-	r.GET("/", func(c *gin.Context) {
-		c.JSONP(http.StatusOK, gin.H{"data": "hello world"})
-	})
+	models.ConnectDatabase()
+
+	r.GET("/books", controllers.FindBooks)
 
 	r.Run(":3000")
 }
